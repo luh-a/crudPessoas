@@ -1,4 +1,4 @@
-export class Pessoa {
+export class PessoaM {
     id? : number
     nome?: string
     email?: string
