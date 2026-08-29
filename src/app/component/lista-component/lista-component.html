@@ -1,1 +1,27 @@
-<p>lista-component works!</p>
+<div id="div_lista">
+    <h2> Lista pessoas </h2>
+
+    <div id="div_listaPessoas">
+
+        <input type="text" [(ngModel)]="nomeBusca" (input)="pesquisar()" placeholder="Buscar por nome">
+
+        @for(elem of pessoas; track elem.id ){
+            <div class="div_itemPessoa">
+                <span class="item_pessoa">
+                    {{elem.id}} - {{elem.nome}} - {{elem.cpf}} - {{elem.dataNascimento}} - {{elem.email}} - {{elem.uf}} - {{elem.municipio}}
+                </span>
+                <span class="btns_lista">
+                    <a class="lnk-editar" (click)="buscarPessoaPorId(elem)"> Editar </a>
+                    <a class="lnk-excluir"  (click)="excluirPessoa(elem)"> Excluir </a>
+                </span>
+            </div>
+        }@empty{
+            <div class="div_itemPessoa">
+                NENHUM REGISTRO NA LISTA
+            </div>
+        }
+
+    </div>
+
+
+</div>
