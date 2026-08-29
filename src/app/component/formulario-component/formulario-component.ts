@@ -94,7 +94,7 @@ export class FormularioComponent {
       this.pessoaService.editarPessoa(pessoa)
       this.edit = false
     } else {
-      pessoa.id = this.pessoaService.tamanhoArray() + 1, //armengue para o id
+      pessoa.id = this.pessoaService.gerarProximoId()
 
       this.pessoaService.adicionarPessoa(pessoa);
     }

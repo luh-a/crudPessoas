@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 })
 export class Pessoa {
   private pessoas: PessoaM[] = []
+  private proximoId: number = 1
 
   tamanhoArray() {
     return this.pessoas.length
@@ -38,4 +39,10 @@ export class Pessoa {
     this.pessoas = this.pessoas.filter((elem) => elem.id !== id)
   }
   
+  // função para solucionar id duplicado
+  gerarProximoId() {
+    const id = this.proximoId;
+    this.proximoId++;
+    return id;
+  }
 }
