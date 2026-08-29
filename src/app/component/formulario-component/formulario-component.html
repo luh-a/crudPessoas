@@ -1,1 +1,48 @@
-<p>formulario-component works!</p>
+<div id="div-formulario">
+    <form id="form-pessoa">
+        <label for="nome"> Nome </label>
+        <input type="text" name="nome" id="nome" [(ngModel)]="nome" class="elem-form-01" required maxlength="60"
+            placeholder="Seu nome">
+
+        <label for="email"> email </label>
+        <input type="email" name="email" id="email" [(ngModel)]="email" class="elem-form-01" required maxlength="60"
+            placeholder="Seu email">
+
+        <label for="cpf"> CPF </label>
+        <input type="number" name="cpf" id="cpf" [(ngModel)]="cpf" class="elem-form-02" required maxlength="60"
+            placeholder="Seu cpf">
+
+        <label for="dataNascimento"> Data de nascimento </label>
+        <input type="date" name="dataNascimento" id="dataNascimento" [(ngModel)]="dataNascimento"
+        class="elem-form-02" required maxlength="60" placeholder="Sua data-nascimento">
+
+        <label for="uf"> UF </label>
+        <select name="uf" id="uf" [(ngModel)]="uf" (change)="carregarMunicipios()" class="elem-form-02">
+
+            <option selected [ngValue]="''">SELECIONE A UF</option>
+
+            @for (item of ufs; track item.id) {
+                <option [ngValue]="item.sigla">
+                    {{ item.sigla }} - {{ item.nome }}
+                </option>
+            }
+        </select>
+
+        <label for="cidade"> Cidade </label>
+        <select id="municipio" name="municipio" [(ngModel)]="municipio" [disabled]="municipios.length === 0" class="elem-form-02">
+
+          <option [ngValue]="''"> SELECIONE O MUNICÍPIO </option>
+
+            @for (item of municipios; track item.id) {
+                <option [ngValue]="item.nome">
+                    {{ item.nome }}
+                </option>
+            }
+        </select>
+
+        <div id="div-btns">
+            <button type="button" id="btnSalvar" (click)="save()"> {{edit ? 'Alterar' : 'Salvar'}} </button>
+            <button type="reset" id="btnLimpar" (click)="limparCampos()"> Limpar </button>
+        </div>
+    </form>
+</div>
