@@ -1,0 +1,85 @@
+#div_lista {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 400px;
+    margin: 0 auto 20px;
+    padding: 30px;
+    color: var(--texto);
+    background-color: var(--branca);
+    border: 1px solid var(--secundaria);
+    border-radius: 0 0 8px 8px;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    color: var(--primaria);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+#div_listaPessoas input[type="text"] {
+    width: 100%;
+    max-width: 350px;
+    height: 42px;
+    padding: 8px 12px;
+    margin-bottom: 24px;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+    font-size: 15px;
+    display: block;
+}
+
+#div_listaPessoas input[type="text"]:focus {
+    outline: none;
+    border-color: var(--botao-salvar);
+}
+
+.div_itemPessoa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--secundaria);
+}
+
+.item_pessoa {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.btns_lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.lnk-editar, .lnk-excluir {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--branca);
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    width: 100px;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.lnk-editar:hover, .lnk-excluir:hover {
+    opacity: 0.85;
+}
+
+.lnk-editar {
+    background-color: var(--botao-salvar);
+}
+
+.lnk-excluir {
+    background-color: var(--botao-limpar);
+}

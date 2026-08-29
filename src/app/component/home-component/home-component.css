@@ -1,0 +1,18 @@
+#div-home {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 400px;
+    margin: auto;
+    color: var(--primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3.5em;
+    border: 2px solid var(--primaria);
+}
+
+#titulo-pessoa {
+    color: var(--botao-salvar);
+    font-weight: bold;
+}

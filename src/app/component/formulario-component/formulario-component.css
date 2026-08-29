@@ -1,0 +1,71 @@
+#div-formulario {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 30px;
+    color: var(--texto);
+    background-color: var(--branca);
+    border: 1px solid var(--secundaria);
+    border-radius: 0 0 8px 8px;
+}
+
+label {
+    display: block;
+    padding: 16px 0 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--primaria);
+    text-transform: uppercase;
+}
+
+input, select {
+    width: 100%;
+    max-width: 450px;
+    height: 42px;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--botao-salvar);
+}
+
+.elem-form-01 { max-width: 100%; }
+.elem-form-02 { max-width: 450px; }
+
+#div-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+button {
+    width: 180px;
+    height: 45px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--branca);
+    transition: opacity 0.3s ease;
+}
+
+#btnSalvar {
+    background-color: var(--botao-salvar);
+}
+
+#btnLimpar {
+    background-color: var(--botao-limpar);
+}
+
+button:hover {
+    opacity: 0.85;
+}
