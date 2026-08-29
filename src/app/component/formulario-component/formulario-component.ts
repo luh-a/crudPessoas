@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import { UfM } from '../../models/ufModel';
 import { PessoaM } from '../../models/pessoaModel';
 import { Pessoa } from '../../services/pessoaService';
@@ -78,7 +78,12 @@ export class FormularioComponent {
 
   }
 
-  save() {
+  save(formPessoa: NgForm) {
+    if (formPessoa.invalid) {
+      alert('Preencha todos os campos obrigatórios corretamente.');
+      return;
+    }
+
     const pessoa = new PessoaM();
     pessoa.nome = this.nome;
     pessoa.email = this.email;

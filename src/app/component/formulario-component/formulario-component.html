@@ -1,16 +1,17 @@
 <div id="div-formulario">
-    <form id="form-pessoa">
+    <form id="form-pessoa" #formPessoa="ngForm">
         <label for="nome"> Nome </label>
         <input type="text" name="nome" id="nome" [(ngModel)]="nome" class="elem-form-01" required maxlength="60"
-            placeholder="Seu nome">
+        placeholder="Seu nome">
 
         <label for="email"> email </label>
         <input type="email" name="email" id="email" [(ngModel)]="email" class="elem-form-01" required maxlength="60"
-            placeholder="Seu email">
+        placeholder="Seu email">
 
         <label for="cpf"> CPF </label>
-        <input type="number" name="cpf" id="cpf" [(ngModel)]="cpf" class="elem-form-02" required maxlength="60"
-            placeholder="Seu cpf">
+        <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf" class="elem-form-02" required maxlength="14"
+        placeholder="Seu cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+        <!-- pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" = formatação do cpf -->
 
         <label for="dataNascimento"> Data de nascimento </label>
         <input type="date" name="dataNascimento" id="dataNascimento" [(ngModel)]="dataNascimento"
@@ -41,7 +42,7 @@
         </select>
 
         <div id="div-btns">
-            <button type="button" id="btnSalvar" (click)="save()"> {{edit ? 'Alterar' : 'Salvar'}} </button>
+            <button type="button" id="btnSalvar" (click)="save(formPessoa)"> {{edit ? 'Alterar' : 'Salvar'}} </button>
             <button type="reset" id="btnLimpar" (click)="limparCampos()"> Limpar </button>
         </div>
     </form>
